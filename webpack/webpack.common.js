@@ -2,20 +2,20 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './src/index.js', // Main entry file
+  entry: './src/index.js', 
   output: {
-    path: path.resolve(__dirname, '../dist'), // Output directory
-    filename: 'bundle.js', // Output file name
-    clean: true, // Clean the output folder before building
+    path: path.resolve(__dirname, '../dist'),
+    filename: 'bundle.js', 
+    clean: true, 
   },
   module: {
     rules: [
       {
-        test: /\.css$/, // Process CSS files
+        test: /\.css$/,
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.js$/, // Transpile JavaScript
+        test: /\.js$/, 
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
@@ -25,7 +25,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html', // Use an HTML template
+      template: './src/template.html', 
     }),
   ],
 };
