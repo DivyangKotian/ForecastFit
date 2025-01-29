@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   entry: './src/index.js', 
@@ -24,16 +25,10 @@ module.exports = {
       // Rule for images (jpg, jpeg, png, gif, svg)
       {
         test: /\.(jpg|jpeg|png|gif|svg)$/i,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: 'assets/[name].[hash].[ext]',
-              outputPath: 'assets/',  
-              publicPath: 'assets/',  
-            },
-          },
-        ],
+        type: 'asset/resource', 
+        generator: {
+          filename: 'assets/[name][ext]',  // Keeps original filename
+        },
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
@@ -46,5 +41,6 @@ module.exports = {
       template: './src/template.html', 
       inject: 'head', 
     }),
+    new Dotenv(),  // This will load .env variables
   ],
 };
