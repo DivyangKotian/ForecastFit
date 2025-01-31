@@ -1,8 +1,9 @@
-const apiKey = process.env.WEATHERFORCAST_API_KEY;
+const weatherApiKey = process.env.VISUAL_CROSSING_API_KEY;
 
 export async function fetchWeatherData(lat, lon) {
     try {
-        const response = await fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&exclude=hourly,daily&appid=${apiKey}`);
+        const response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${lat},${lon}/today?unitGroup=metric&include=current&key=${weatherApiKey}&contentType=json`);
+
         
         if (!response.ok) {
             throw new Error(`Weather data not fetched`);

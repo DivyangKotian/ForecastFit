@@ -1,3 +1,4 @@
+
 import './css/styles.css'
 import { handleUserSubmit } from './handlers/userInputHandlers';
 import { loadImage } from './utils/imageLoader';
