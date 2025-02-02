@@ -5,6 +5,8 @@ import { updateWeatherUI } from '../uifunctions/displayweather.js';
 import { getMoodFromWeather } from '../utils/getmood.js';
 import { getPlaylist } from '../api/musicapi.js';
 import { updateMusicUI } from '../uifunctions/displaymusic.js';
+import { updateOutfitRecommendations } from '../utils/getoutfit.js';
+import { updateEssentials } from '../utils/getEssentials.js';
 
 export async function handleUserSubmit() {
   const cityName = getUserInput();  // Get city from input
@@ -22,6 +24,9 @@ export async function handleUserSubmit() {
       
       updateWeatherUI(weatherData);  // update the following ui elements
       updateMusicUI(playlist);
+      updateOutfitRecommendations(weatherData);
+      updateEssentials(weatherData);
+
     } else {
       console.log('Failed to retrieve weather data.');
   }

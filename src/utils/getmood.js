@@ -1,13 +1,13 @@
 export function getMoodFromWeather(weather) {
     if (weather === 'clear' || weather === 'sunny') {
         return 'happy'; // Bright, sunny weather feels happy
-    } else if (weather === 'cloudy' || weather === 'overcast') {
+    } else if (weather === 'cloudy' || weather === 'Partially cloudy') {
         return 'chill'; // Overcast can be relaxing or calm
     } else if (weather === 'rain' || weather === 'drizzle') {
         return 'melancholic'; // Rain often feels melancholic
     } else if (weather === 'thunderstorm') {
         return 'metal'; // Thunderstorms bring intense vibes
-    } else if (weather === 'snow') {
+    } else if (weather === 'snow' || weather==='Overcast') {
         return 'cozy'; // Snow feels cozy and peaceful
     } else if (weather === 'windy') {
         return 'energetic'; // Windy weather can feel intense or energetic
