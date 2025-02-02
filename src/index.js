@@ -2,6 +2,7 @@
 import './css/styles.css'
 import { handleUserSubmit } from './handlers/userInputHandlers';
 import { loadImage } from './utils/imageLoader';
+import { getPlaylist } from './api/musicapi';
 
 document.addEventListener('DOMContentLoaded', () => {
   loadImage(); // This will add the image to the button when the page loads
@@ -13,3 +14,5 @@ document.querySelector('.user-input').addEventListener('keydown', (e) =>{
     handleUserSubmit();
   }
 })
+
+
