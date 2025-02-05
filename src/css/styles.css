@@ -9,7 +9,7 @@
   font-size: 16px;
   font-family: "Poppins", sans-serif;
 
-  --primary-dark: #c05746; /* Warm terracotta */
+  --primary-dark: #cb6252; /* Warm terracotta */
   --primary-light: #fef8ec; /* Soft cream */
   --header-color: #ff8c61; /* Sunset orange */
   --header-accent: #ffbe98; /* Soft peach for contrast */
@@ -33,7 +33,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(180deg, var(--header-color), var(--header-accent)); /* Soft peach to light beige */
+  background: linear-gradient(180deg, var(--primary-dark), var(--header-accent)); /* Soft peach to light beige */
   padding: 15px;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -45,6 +45,7 @@ body {
   font-weight: bold;
   color: var(--primary-light);
   text-transform: uppercase;
+  cursor: pointer;
 }
 
 .search-icon{
@@ -72,18 +73,12 @@ body {
 
 .submit {
   padding: 10px 15px;
-  background-color: var(--sidebar-color);
+  background-color: transparent;
   border: none;
   cursor: pointer;
-  font-size: 1rem;
-  border-radius: 8px;
   transition: background 0.3s;
 }
 
-.submit:hover {
-  background-color: var(--sidebar-color-highlight);
-  color: white;
-}
 
 /* Weather Info */
 .weather-info {
@@ -120,7 +115,7 @@ body {
 }
 
 .detail-card {
-  background: linear-gradient(135deg, var(--header-accent), #ffe6cc);
+  background: linear-gradient(135deg, var(--primary-dark), var(--header-accent));
   color: var(--text-color); 
   padding: 20px;
   border-radius: 12px;
@@ -141,7 +136,7 @@ body {
 }
 
 .playlist-card {
-  background: linear-gradient(135deg, var(--header-accent), #ffe6cc);
+  background: linear-gradient(135deg, var(--primary-dark), var(--header-accent));
   color: var(--text-color); 
   padding: 20px;
   border-radius: 12px;
@@ -162,13 +157,17 @@ body {
 }
 
 .outfit-card, .essential-card {
-  background: linear-gradient(135deg, var(--header-accent), #ffe6cc);
+  background: linear-gradient(135deg, var(--primary-dark), var(--header-accent));
   color: var(--text-color); 
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Soft shadow for depth */
   transition: transform 0.3s ease-in-out;
   font-weight: 600;
+}
+
+.detail-card, .playlist-card, .outfit-card, .essential-card {
+  color: #3e2a1f; /* Slightly darker brown */
 }
 
 /* Responsive Design */
