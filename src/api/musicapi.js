@@ -21,7 +21,7 @@ async function getAccessToken() {
    }
 }
 
-function randomizePlaylists(playlists) {
+function randomizePlaylists(playlists) {            // randomize it cause spotify suggests the same playlists in same order
     return playlists.sort(() => Math.random() - 0.5); // Randomizes the order
 }
 
@@ -53,9 +53,9 @@ export async function getPlaylist(mood) {
         }
 
         const randomizedPlaylists = randomizePlaylists(playlists); // to keep it fresh
-        const random3Playlists = randomizedPlaylists.splice(0, 3); // we will display 3 playlists
+        const random4Playlists = randomizedPlaylists.splice(0, 4); // we will display 4 playlists
         console.log(mood) //debugging
-        return random3Playlists;
+        return random4Playlists;
     } catch (error) {
         console.error(error);
         return null;

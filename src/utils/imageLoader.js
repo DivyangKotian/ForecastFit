@@ -1,13 +1,14 @@
 //image loader functions
-import magnifyingGlass from '../assets/search.svg'; // Ensure path is correct
+import magnifyingGlass from '../assets/search.svg';
 
 export function loadImage() {
-  const button = document.querySelector('.submit'); // Correct class selector
-  if (!button) return; // Prevents errors if button isn't found
+  const button = document.querySelector('.submit'); 
+  if (!button) return; // Prevents errors if no btn
 
   let img = button.querySelector('img'); // Find existing image inside button
   if (!img) {
     img = document.createElement('img');
+    img.classList.add('search-icon')
     button.appendChild(img);
   }
 

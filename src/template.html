@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ForecastFit</title>
+    <script src="https://kit.fontawesome.com/53eb5b5946.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="nav-bar">
@@ -15,28 +16,28 @@
     </div>
     <!-- weather overview sec-->
     <section class="weather-info">
-        <h1 id="city-name">Enter a city in the search bar</h1>
-        <p id="date"></p>
+        <h1 id="city-name">Enter City into the search bar</h1>
+        <p id="date">MM/DD/YYYY</p>
         <div class="weather-overview">
-          <span id="icon">☀️icon here</span>
-          <h2 id="temp"></h2>
-          <p id="description"></p>
+          <span id="icon"></span>
+          <h2 id="temp">0°C</h2>
         </div>
       </section>
       <!-- weather deatils sec-->
       <section class="weather-details">
-        <div class="detail-card">Humidity: </div>
-        <div class="detail-card">Wind: </div>
-        <div class="detail-card">Percipitation: </div>
+        <div class="detail-card">Humidity: 0.0% </div>
+        <div class="detail-card">Wind: 0 km/h</div>
+        <div class="detail-card">Percipitation: 0% </div>
       </section>
 
        <!-- Music Section -->
         <section class="music">
             <h3> Playlist for today</h3>
             <div class="playlist-grid">
-                <div class="playlist-card">🎵 Playlist 1</div>
-                <div class="playlist-card">🎵 Playlist 2</div>
-                <div class="playlist-card">🎵 Playlist 3</div>
+                <div class="playlist-card">🎵 Loading Playlist</div>
+                <div class="playlist-card">🎵 Loading Playlist</div>
+                <div class="playlist-card">🎵 Loading Playlist</div>
+                <div class="playlist-card">🎵 Loading Playlist</div>
             </div>
         </section>
 
@@ -56,7 +57,7 @@
             </div>
         </section>
 
-<!-- feature to add later
+<!-- feature to add later either sidebar or dropdown in navbar
         <aside class="sidebar">
             <h3>Saved Cities</h3>
             <ul>
@@ -66,7 +67,20 @@
             </ul>
           </aside> -->
           
-
+        <!-- Footer -->
+        <div class="footer-container">  
+          <footer class="footer">
+              <p>
+                  Copyright ©
+              <script>
+                      document.write(new Date().getFullYear())
+               </script>
+                      Divyang Kotian
+              </p>
+              <a href="https://github.com/DivyangKotian" target="_blank">
+                  <i class="fab fa-github"></i>
+              </a>
+          </footer>      
     <noscript>
         <p>This application requires JavaScript to function. Please enable JavaScript in your browser settings to use the app.</p>
       </noscript>      

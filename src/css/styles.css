@@ -1,4 +1,3 @@
-
 /* Global Styles */
 * {
   box-sizing: border-box;
@@ -6,10 +5,26 @@
   padding: 0;
 }
 
+:root {
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+
+  --primary-dark: #c05746; /* Warm terracotta */
+  --primary-light: #fef8ec; /* Soft cream */
+  --header-color: #ff8c61; /* Sunset orange */
+  --header-accent: #ffbe98; /* Soft peach for contrast */
+  --main-container: #ffe6cc; /* Light orange-beige */
+  --footer: #b85042; /* Deeper red-orange */
+  --text-color: #5a3d2b; /* Dark brown for readability */
+  
+  --footer-height: 60px;
+}
+
+
 body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--main-container);
+  color: var(--text-color);
   padding: 20px;
 }
 
@@ -18,41 +33,57 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #4CAF50;
-  padding: 10px;
-  border-radius: 5px;
+  background: linear-gradient(180deg, var(--header-color), var(--header-accent)); /* Soft peach to light beige */
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Logo/Text Styling */
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
-  color: white;
+  color: var(--primary-light);
+  text-transform: uppercase;
+}
+
+.search-icon{
+  width: 20px;
+  height: 20px;
+  transition: transform 0.2s ease-in-out
+}
+
+.search-icon:hover{
+  transform: scale(1.2);
 }
 
 .search-bar {
   display: flex;
+  width:50%;
 }
 
 .user-input {
-  padding: 8px;
+  padding: 10px;
   font-size: 1rem;
-  border-radius: 5px;
+  border-radius: 8px;
   border: 1px solid #ccc;
-  margin-right: 10px;
+  width: 90%;
 }
 
 .submit {
-  padding: 8px 15px;
-  background-color: #fff;
+  padding: 10px 15px;
+  background-color: var(--sidebar-color);
   border: none;
   cursor: pointer;
   font-size: 1rem;
+  border-radius: 8px;
+  transition: background 0.3s;
 }
 
-button img {
-    width: 10px;  /* Adjust size to your preference */
-    height: 10px;
-  }
+.submit:hover {
+  background-color: var(--sidebar-color-highlight);
+  color: white;
+}
 
 /* Weather Info */
 .weather-info {
@@ -61,23 +92,24 @@ button img {
 }
 
 .weather-info h1 {
-  font-size: 2rem;
-  margin-bottom: 10px;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
 }
 
 .weather-info .weather-overview {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 10px;
 }
 
 .weather-info h2 {
   font-size: 1.8rem;
-  margin-left: 10px;
 }
 
 .weather-info p {
   font-size: 1rem;
+  opacity: 0.8;
 }
 
 /* Weather Details */
@@ -88,17 +120,18 @@ button img {
 }
 
 .detail-card {
-  background-color: #fff;
-  padding: 10px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 30%;
-  text-align: center;
+  background: linear-gradient(135deg, var(--header-accent), #ffe6cc);
+  color: var(--text-color); 
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Soft shadow for depth */
+  transition: transform 0.3s ease-in-out;
+  font-weight: 700;
 }
 
 /* Music Section */
 .music {
-  margin-top: 40px;
+  margin-top: 30px;
 }
 
 .playlist-grid {
@@ -108,16 +141,18 @@ button img {
 }
 
 .playlist-card {
-  background-color: #fff;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-  text-align: center;
+  background: linear-gradient(135deg, var(--header-accent), #ffe6cc);
+  color: var(--text-color); 
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Soft shadow for depth */
+  transition: transform 0.3s ease-in-out;
+  font-weight: 600;
 }
 
 /* Outfit & Essentials Section */
 .outfit,.essential {
-  margin-top: 40px;
+  margin-top: 30px;
 }
 
 .outfit-grid, .essential-grid {
@@ -127,40 +162,13 @@ button img {
 }
 
 .outfit-card, .essential-card {
-  background-color: #fff;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-/* Sidebar */
-.sidebar {
-  background-color: #fff;
+  background: linear-gradient(135deg, var(--header-accent), #ffe6cc);
+  color: var(--text-color); 
   padding: 20px;
-  position: fixed;
-  right: 20px;
-  top: 100px;
-  width: 200px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-}
-
-.sidebar h3 {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-}
-
-.sidebar ul {
-  list-style-type: none;
-}
-
-.sidebar ul li {
-  padding: 8px;
-  margin-bottom: 5px;
-  background-color: #f0f0f0;
-  border-radius: 5px;
-  cursor: pointer;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Soft shadow for depth */
+  transition: transform 0.3s ease-in-out;
+  font-weight: 600;
 }
 
 /* Responsive Design */
@@ -168,11 +176,41 @@ button img {
   .weather-details, .outfit-grid, .essential-grid, .playlist-grid {
       grid-template-columns: 1fr;
   }
+}
 
-  .sidebar {
-      position: relative;
-      top: 0;
-      width: 100%;
-      margin-top: 20px;
-  }
+.footer{
+  background: linear-gradient(360deg, var(--footer), var(--header-accent)); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  font-size: 17px;
+  padding: 15px;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  background-color: var(--footer);
+  color: #fff;
+  border-radius: 12px;
+}
+
+/* Footer icon styling */
+.fa-github {
+  color: #fff;
+  transition: transform 0.3s ease-in-out;
+}
+
+.fa-github:hover {
+  transform: rotate(360deg) scale(1.6);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer-container{
+  margin-top:30px;
+  margin-bottom: 0px;
 }

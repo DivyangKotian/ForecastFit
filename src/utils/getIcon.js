@@ -13,6 +13,6 @@ const weatherIcons = {              //mapping possible values to emojis, instead
 };
 
 
-export function getWeatherIcon(icon){
-    return weatherIcons[icon];
+export function getWeatherIcon(icon){       //pass currentConditions.icon here
+    return weatherIcons[icon];              //mapping corresponding description and emoji
 }
