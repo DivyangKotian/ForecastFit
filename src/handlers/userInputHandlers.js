@@ -2,10 +2,10 @@ import { getUserInput } from '../utils/userInput.js';
 import { fetchWeatherData } from '../api/weatherAPI.js';
 import { getCords } from '../api/geoCodeapi.js';
 import { updateWeatherUI } from '../uifunctions/displayweather.js';
-import { getMoodFromWeather } from '../utils/getmood.js';
+import { getMoodFromWeather } from '../utils/getMood.js';
 import { getPlaylist } from '../api/musicapi.js';
 import { updateMusicUI } from '../uifunctions/displaymusic.js';
-import { updateOutfitRecommendations } from '../utils/getoutfit.js';
+import { updateOutfitRecommendations } from '../utils/getOutfit.js';
 import { updateEssentials } from '../utils/getEssentials.js';
 
 export async function handleUserSubmit() {
@@ -18,9 +18,7 @@ export async function handleUserSubmit() {
       console.log(weatherData);
       const mood=getMoodFromWeather(weatherData.currentConditions.conditions)
       console.log(weatherData.currentConditions.conditions) //debugging
-      const playlist= await getPlaylist(mood);
-
-      console.log(playlist)
+      const playlist= await getPlaylist(mood);  
       
       updateWeatherUI(weatherData);  // update the following ui elements
       updateMusicUI(playlist);

@@ -1,4 +1,5 @@
 import { getUserInput } from "../utils/userInput";
+import { getWeatherIcon } from "../utils/getIcon";
 
 export function updateWeatherUI(weatherData) {
     const currentWeather = weatherData.currentConditions;
@@ -6,7 +7,7 @@ export function updateWeatherUI(weatherData) {
 
     document.getElementById("city-name").textContent = cityName || "Unknown City"; // Fallback if empty, might have to change this if i add autocomplete
     document.getElementById("date").textContent = new Date().toLocaleDateString(); // change if i add a 7 day section etc
-    // document.getElementById("icon").innerHTML = getWeatherIcon(currentWeather.icon); // write a func to assign icons to the icon we get from api data
+    document.getElementById("icon").innerHTML = getWeatherIcon(currentWeather.icon); // write a func to assign icons to the icon we get from api data
     document.getElementById("temp").textContent = `${currentWeather.temp}°C`;  //maybe allow users to switch units of measurement, have to switch api calls
     document.getElementById("description").textContent = currentWeather.conditions;
 
