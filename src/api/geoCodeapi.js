@@ -1,7 +1,7 @@
 const geoCodeApiKey= process.env.OPENWEATHER_API_KEY;
 export async function getCords(cityName) {
     try{
-        const response=await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${geoCodeApiKey}`)
+        const response=await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${geoCodeApiKey}`)
         
         if(!response.ok){
             throw new Error(`unable to fetch ${cityName} cords`);
